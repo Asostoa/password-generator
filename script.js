@@ -5,9 +5,8 @@ var generateBtn = document.querySelector("#generate");
 function writePassword() {
   /* var password=generatePassword();*/
   var passwordText = document.querySelector("#password");
+  
   var superLibrary = [];
-
-
   //in here we ask the use how long he wants his password
 
    passwordLenght = prompt("how many characters you want in your password?");
@@ -18,7 +17,7 @@ function writePassword() {
     alert("you need a password betewn 8 and 125 characters");
    // passwordLenght = prompt("how many characters you want in your password?");
   } else {
-   // alert("do something");
+    
     // in here we create separate libraries if the uiser accept
      yesUpperCase = confirm("Will you like upper case characters in your password? ");
     if (yesUpperCase) {
