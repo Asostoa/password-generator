@@ -10,7 +10,7 @@ Contribution
 
 Mia Bootcamp staff
 
-Authors
+Author
 -Alexander de Sostoa- initial work - university of miami
 
 
