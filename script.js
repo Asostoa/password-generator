@@ -10,53 +10,56 @@ function writePassword() {
 
   //in here we ask the use how long he wants his password
 
-  passwordLenght = prompt("how many characters you want in your password?");
+   passwordLenght = prompt("how many characters you want in your password?");
 
   //we make sure that the users choose a length that is correct
-  if (passwordLenght >= 8)  
-  {
-    alert("you choose your password to be " + passwordLenght)
-  }
-  if (passwordLenght < 8) {
-    alert("you need at least 8 characters")
-    for (i = 0; passwordLenght < 8; i++) {
-      passwordLenght = prompt("how many characters you want in your password?");
-      if (passwordLenght < 8) {
-        alert("you need at least 8 characters");
-      }
+  if (passwordLenght < 8 || passwordLenght >= 126) {
+    //alert("you choose your password to be " + passwordLenght)
+    alert("you need a password betewn 8 and 125 characters");
+   // passwordLenght = prompt("how many characters you want in your password?");
+  } else {
+   // alert("do something");
+    // in here we create separate libraries if the uiser accept
+     yesUpperCase = confirm("Will you like upper case characters in your password? ");
+    if (yesUpperCase) {
+      superLibrary = superLibrary.concat(myLibrary.upper)
     }
-  }
-  // in here we create separate libraries if the uiser accept
-  var yesUpperCase = confirm("Will you like upper case characters in your password? ");
-  if (yesUpperCase) {
-    superLibrary = superLibrary.concat(myLibrary.upper)
-  }
-  var yesLowerCase = confirm("Will you like lower case characters in your password? ");
-  if (yesLowerCase) {
-    superLibrary = superLibrary.concat(myLibrary.lower)
-  }
-  var yesSpecialCharacter = confirm("Will you like special characters in your password? ");
-  if (yesSpecialCharacter) {
-    superLibrary = superLibrary.concat(myLibrary.symbol)
-  }
-  var yesNumber = confirm("Will you like numbers in your password? ");
-  if (yesNumber) {
-    superLibrary = superLibrary.concat(myLibrary.number)
-  }
-  
-  //in here we create a random password with the choises that the user confirm
-  var password = '';
-  var confirmOpt = password.length;
-  console.log('you chose ' + confirmOpt + ' options');
-  var newPasswordLength = passwordLenght - confirmOpt;
-  for (var i = 0; i < newPasswordLength; i++) {
-    password += superLibrary[getRandomNumber(superLibrary.length)];
+    var yesLowerCase = confirm("Will you like lower case characters in your password? ");
+    if (yesLowerCase) {
+      superLibrary = superLibrary.concat(myLibrary.lower)
+    }
+    var yesSpecialCharacter = confirm("Will you like special characters in your password? ");
+    if (yesSpecialCharacter) {
+      superLibrary = superLibrary.concat(myLibrary.symbol)
+    }
+    var yesNumber = confirm("Will you like numbers in your password? ");
+    if (yesNumber) {
+      superLibrary = superLibrary.concat(myLibrary.number)
+    }
 
+    //in here we create a random password with the choises that the user confirm
+    var password = '';
+    var confirmOpt = password.length;
+    console.log('you chose ' + confirmOpt + ' options');
+    var newPasswordLength = passwordLenght - confirmOpt;
+    for (var i = 0; i < newPasswordLength; i++) {
+      password += superLibrary[getRandomNumber(superLibrary.length)];
+    }
+    passwordText.value = password;
 
   }
-  passwordText.value = password;
- 
 }
+
+// if (passwordLenght > 8) {
+//     alert("you need at least 8 characters")
+//     for (i = 0; passwordLenght < 8; i++) {
+//       passwordLenght = prompt("how many characters you want in your password?");
+//       if (passwordLenght < 8) {
+//         alert("you need at least 8 characters");
+//       }
+//     }
+//}
+
 //in here we create a random number wich we use to create a random password
 function getRandomNumber(limit) {
   var basicRandom = Math.random();
