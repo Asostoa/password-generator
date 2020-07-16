@@ -49,17 +49,6 @@ function writePassword() {
 
   }
 }
-
-// if (passwordLenght > 8) {
-//     alert("you need at least 8 characters")
-//     for (i = 0; passwordLenght < 8; i++) {
-//       passwordLenght = prompt("how many characters you want in your password?");
-//       if (passwordLenght < 8) {
-//         alert("you need at least 8 characters");
-//       }
-//     }
-//}
-
 //in here we create a random number wich we use to create a random password
 function getRandomNumber(limit) {
   var basicRandom = Math.random();
